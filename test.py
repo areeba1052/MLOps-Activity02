@@ -1,14 +1,16 @@
+from main import mlops
+ 
+mlopsObj = mlops(5)
+def test_getTotalStudents():
+    assert mlopsObj.getTotalStudents() == 5
 
-from main import StudentsInMLOps
+def test_addStudent():
+    mlopsObj.addStudent()
+    assert mlopsObj.getTotalStudents() == 6
 
+def test_removeStudent():
+    mlopsObj.removeStudent()
+    assert mlopsObj.getTotalStudents()==5
 
-def test_enroll_and_drop_students():
-    classroom = StudentsInMLOps()
-    classroom.enrollStudents(5)
-    assert classroom.getTotalStrength() == 5
-    classroom.dropStudents(2)
-    assert classroom.getTotalStrength() == 3
-
-def test_class_name():
-    classroom = StudentsInMLOps()
-    assert classroom.getClassName() == "MLOps Essentials"
+def test_getClassName():
+    assert mlopsObj.getClassName() == "Machine Learning Operations (CS-B)"
