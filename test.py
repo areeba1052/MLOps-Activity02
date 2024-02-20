@@ -11,4 +11,4 @@ def test_enroll_and_drop_students():
 
 def test_class_name():
     classroom = StudentsInMLOps()
-    assert classroom.getClassName() == "MLOps Essentialsss"
+    assert classroom.getClassName() == "MLOps Essentials"
