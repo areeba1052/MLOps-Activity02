@@ -1,24 +1,15 @@
 class mlops:
-        def _init_(self, totalStudents):
-                self.totalStudents = totalStudents
-
+        def _init_(self , totalStudents):
+            self.totalStudents = totalStudents
+        
         def getTotalStudents(self):
-                return self.totalStudents
-        
-        def addStudent(self):
-                self.totalStudents=self.totalStudents + 1
-        
-        def removeStudent(self):
-                self.totalStudents=self.totalStudents - 1
+            return self.totalStudents
+
+        def addStudents(self):
+            self.totalStudents += 1
+
+        def removeStudents(self):
+            self.totalStudents -= 1
         
         def getClassName(self):
-                return "Machine Learning Operations (CS-B)"
-        
-mlops_class = mlops(5)
-
-mlops_class.addStudent()
-
-mlops_class.removeStudent()
-
-print(mlops_class.getTotalStudents())  # Call the method
-print(mlops_class.getClassName())      # Call the method
+            return "MLOPS CS-B"
