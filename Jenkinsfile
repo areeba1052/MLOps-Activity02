@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Cloning the repository') {
+         stage('Checkout repository') {
             steps {
-                git 'https://github.com/areeba1052/MLOps-Activity02.git'
+                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/areeba1052/MLOps-Activity02.git']])
             }
         }
 
@@ -25,7 +25,7 @@ pipeline {
                 script {
                     def branchName = sh(script: 'git rev-parse --abbrev-ref HEAD', returnStdout: true).trim()
                     if (branchName == 'main') {
-                        echo 'Deploying to the production mode'
+                        echo 'Deploying to production'
                     } else {
                         echo 'Deploying to UAT'
                     }
